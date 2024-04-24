@@ -1,0 +1,21 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "KVSCameraCertificateBasedIAMRole",
+        "RoleId": "AROA5ROF6YECJ6YCPAKUL",
+        "Arn": "arn:aws:iam::adfasfdasf:role/KVSCameraCertificateBasedIAMRole",
+        "CreateDate": "2022-08-10T15:13:34Z",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "credentials.iot.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}

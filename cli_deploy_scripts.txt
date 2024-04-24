@@ -1,0 +1,22 @@
+iot attach-thing-principal --thing-name kvs_camera_stream --principal $(jq --raw-output '.certificateArn' certificate)
+        
+kinesisvideo create-stream  --data-retention-in-hours 24 --stream-name kvs_camera_stream
+
+curl --silent -H "x-amzn-iot-thingname:kvs_camera_stream" --cert certificate.pem --key private.pem.key https://asdfasfas.credentials.iot.us-east-1.amazonaws.com/role-aliases/KvsCameraIoTRoleAlias/credentials --cacert ./cacert.pem > token.json
+        
+        
+curl --silent -H "x-amzn-iot-thingname:kvs_camera_stream" --cert certificate.pem --key private.pem.key https://afdasf.credentials.iot.us-east-1.amazonaws.com/role-aliases/KvsCameraIoTRoleAlias/credentials --cacert ./cacert.pem > token.json
+
+kinesisvideo create-stream  --data-retention-in-hours 24 --stream-name kvs_camera_stream
+        
+        
+        
+{
+   "Sid": "AWSBudgetsSNSPublishingPermissions",
+   "Effect": "Allow",
+   "Principal": {
+       "Service": "budgets.amazonaws.com"
+    },
+    "Action": "SNS:Publish",
+    "Resource": "arn:aws:sns:us-east-1:ROOT_ACCOUNT_ID:AWS_Sandbox_Budget"
+}
